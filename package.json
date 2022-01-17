@@ -1,0 +1,17 @@
+{
+  "name": "ghpages-play",
+  "version": "1.0.0",
+  "homepage": "https://ashudson23.github.io/ghpages-play/",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "deploy-storybook": "storybook-to-ghpages"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@storybook/storybook-deployer": "^2.8.10",
+    "@storybook/web-components": "^6.4.13",
+    "babel-loader": "^8.2.3",
+    "lit": "^2.1.1"
+  }
+}

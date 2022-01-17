@@ -1,0 +1,22 @@
+name: Build & Deploy Storybook
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub Environment Variables Action
+        uses: FranzDiebold/github-env-vars-action@v2
+
+      - name: Checkout branch
+        uses: actions/checkout@v2
+
+      - name: Install and Deploy
+        run: |
+          npm install
+          npm run deploy-storybook -- --ci --source-branch=${{ env.CI_ACTION_REF_NAME }}
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
