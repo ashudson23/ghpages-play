@@ -1,7 +1,7 @@
 {
   "name": "ghpages-play",
   "version": "1.0.0",
-  "homepage": "http://ashudson.github.io/ghpages-play/",
+  "homepage": "https://ashudson23.github.io/ghpages-play/",
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "deploy-storybook": "storybook-to-ghpages"

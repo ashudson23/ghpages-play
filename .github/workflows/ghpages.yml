@@ -1,5 +1,8 @@
 name: Build & Deploy Storybook
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -8,6 +11,6 @@ jobs:
       - name: Install and Deploy
         run: |
           npm install
-          npm run deploy-storybook -- --ci
+          npm run deploy-storybook -- --ci --source-branch=${{ GITHUB_REF_NAME }}
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
